@@ -5,6 +5,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 const Photo = React.createClass({
   render() {
     const { post, i, comments } = this.props;
+<<<<<<< HEAD
     console.log('working');
     console.log(post.code);
     console.log(this.props);
@@ -14,12 +15,27 @@ const Photo = React.createClass({
           <Link to={`/view/${this.props.code}`}>
             <img src={post.display_src} alt={post.caption} className="grid-photo" />
           </Link>
+=======
+    
+    return (
+      <figure className="grid-figure">
+        <div className="grid-photo-wrap">
+          <Link to={`/view/${post.code}`}>
+            <img src={post.display_src} alt={post.caption} className="grid-photo" />
+          </Link>
+    
+>>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
 
           <CSSTransitionGroup transitionName="like" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
             <span key={post.likes} className="likes-heart">{post.likes}</span>
           </CSSTransitionGroup>
+<<<<<<< HEAD
 
         </div>
+=======
+        </div>
+
+>>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
 
         <figcaption>
           <p>{post.caption}</p>
@@ -33,9 +49,18 @@ const Photo = React.createClass({
             </Link>
           </div>
         </figcaption>
+<<<<<<< HEAD
 
       </figure>
     )
+  }
+});
+=======
+>>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
+
+      </figure>
+    )
+    console.log(post);
   }
 });
 
