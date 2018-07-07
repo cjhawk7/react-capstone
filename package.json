@@ -1,22 +1,29 @@
 {
-  "name": "learn-redux",
+  "name": "react-capstone",
   "version": "1.0.0",
-  "description": ":) ",
+  "description": "A React + Redux app",
+  "main": "devServer.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
+    "test": "mocha",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "test": "NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register",
     "clean": "rimraf dist",
-    "start": "node devServer.js",
-    "tunnel": "browser-sync start --proxy localhost:7770 --tunnel wesbos"
+    "start": "node devServer.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wesbos/Learn-Redux.git"
+    "url": "git+https://github.com/cjhawk7/react-capstone.git"
   },
-  "author": "Wes Bos",
-  "license": "MIT",
-  "homepage": "https://github.com/wesbos/Learn-Redux",
+  "author": "Chris Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjhawk7/react-capstone/issues"
+  },
+  "homepage": "https://github.com/cjhawk7/react-capstone#readme",
+
   "dependencies": {
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",

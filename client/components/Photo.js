@@ -5,62 +5,37 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 const Photo = React.createClass({
   render() {
     const { post, i, comments } = this.props;
-<<<<<<< HEAD
     console.log('working');
-    console.log(post.code);
+    console.log(post);
+    console.log('working2');
     console.log(this.props);
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
           <Link to={`/view/${this.props.code}`}>
-            <img src={post.display_src} alt={post.caption} className="grid-photo" />
+            <img src={this.props.display_src} alt={this.props.caption} className="grid-photo" />
           </Link>
-=======
-    
-    return (
-      <figure className="grid-figure">
-        <div className="grid-photo-wrap">
-          <Link to={`/view/${post.code}`}>
-            <img src={post.display_src} alt={post.caption} className="grid-photo" />
-          </Link>
-    
->>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
 
           <CSSTransitionGroup transitionName="like" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-            <span key={post.likes} className="likes-heart">{post.likes}</span>
+            <span key={this.props.likes} className="likes-heart">{this.props.likes}</span>
           </CSSTransitionGroup>
-<<<<<<< HEAD
-
         </div>
-=======
-        </div>
-
->>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
 
         <figcaption>
-          <p>{post.caption}</p>
+          <p>{this.props.caption}</p>
           <div className="control-buttons">
-            <button onClick={this.props.increment.bind(null, i)} className="likes">&hearts; {post.likes}</button>
-            <Link className="button" to={`/view/${post.code}`}>
+            <button onClick={this.props.increment.bind(null, i)} className="likes">&hearts; {this.props.likes}</button>
+            <Link className="button" to={`/view/${this.props.code}`}>
               <span className="comment-count">
                 <span className="speech-bubble"></span>
-                {comments[post.code] ? comments[post.code].length : 0 }
+                {comments[this.props.code] ? comments[this.props.code].length : 0 }
               </span>
             </Link>
           </div>
         </figcaption>
-<<<<<<< HEAD
 
       </figure>
     )
-  }
-});
-=======
->>>>>>> a95f47602dfc64f945d80fbb9ff287c90c5da144
-
-      </figure>
-    )
-    console.log(post);
   }
 });
 
