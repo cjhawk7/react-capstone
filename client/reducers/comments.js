@@ -1,30 +1,36 @@
-function postComments(state=[], action) {
+function postComments(state = [], action) {
     switch(action.type){
-        case 'ADD_COMMENT':
-            return [...state,{
-                user: action.author,
-                text: action.comment
-            }]
-        case 'REMOVE_COMMENT':
-        console.log("Removing a comment");
+      case 'ADD_COMMENT':
+        // return the new state with the new comment
+        return [...state,{
+          user: action.author,
+          text: action.comment
+        }];
+      case 'REMOVE_COMMENT':
+        // we need to return the new state without the deleted comment
         return [
-            ...state.slice(0,action.i),
-            ...state.slice(action.i + 1)
+          // from the start to the one we want to delete
+          ...state.slice(0,action.i),
+          // after the deleted one, to the end
+          ...state.slice(action.i + 1)
         ]
-        default:
+      default:
         return state;
     }
     return state;
-}
-
-function comments(state=[], action) {
+  }
+  
+  function comments(state = [], action) {
     if(typeof action.postId !== 'undefined') {
-        return {
-           ...state, 
-           [action.postId]: postComments(state[action.postId], action)
-        } 
+      return {
+        // take the current state
+        ...state,
+        // overwrite this post with a new one
+        [action.postId]: postComments(state[action.postId], action)
+      }
     }
     return state;
-}
-
-export default comments;
+  }
+  
+  export default comments;
+  
